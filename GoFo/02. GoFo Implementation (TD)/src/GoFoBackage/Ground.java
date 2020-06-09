@@ -24,6 +24,10 @@ public class Ground {
 	
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function returns the playground name.
 	 * @return
@@ -32,6 +36,10 @@ public class Ground {
 		return groundName;
 	}
 
+	
+	
+	
+	
 	
 	
 	/**
@@ -44,6 +52,10 @@ public class Ground {
 
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function returns the playground location.
 	 * @return
@@ -52,6 +64,11 @@ public class Ground {
 	return groundLocation;
 	}
 
+	
+	
+	
+	
+	
 	
 	
 	/**
@@ -64,6 +81,10 @@ public class Ground {
 
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function returns the playground area.
 	 * @return
@@ -72,6 +93,10 @@ public class Ground {
 	return groundArea;
 	}
 
+	
+	
+	
+	
 	
 	
 	/**
@@ -84,6 +109,10 @@ public class Ground {
 
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function returns the playground ID.
 	 * @return
@@ -92,6 +121,11 @@ public class Ground {
 	return groundID;
 	}
 
+	
+	
+	
+	
+	
 	
 	
 	/**
@@ -104,6 +138,10 @@ public class Ground {
 
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function returns the playground state.
 	 * @return
@@ -112,6 +150,10 @@ public class Ground {
 	return state;
 	}
 
+	
+	
+	
+	
 	
 	
 	/**
@@ -124,6 +166,10 @@ public class Ground {
 
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function returns the playground available hours.
 	 * @return
@@ -133,6 +179,11 @@ public class Ground {
 	}
 
 	
+	
+	
+	
+	
+	
 	/**
 	 * This function sets an initial value to the playground available hours.
 	 * @param availableHour
@@ -140,6 +191,10 @@ public class Ground {
 	public void setAvailableHour(int[][] availableHour) {
 		this.availableHour = availableHour;
 	}
+	
+	
+	
+	
 	
 	
 	/**
@@ -155,6 +210,10 @@ public class Ground {
 
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function returns the playground booker ID.
 	 * @return
@@ -163,6 +222,10 @@ public class Ground {
 	return bookerID[i];
 	}
 
+	
+	
+	
+	
 	
 	
 	/**
@@ -175,6 +238,11 @@ public class Ground {
 
 	
 	
+	
+	
+	
+	
+	
 	/**
 	 * This function returns the playground price.
 	 * @return
@@ -185,6 +253,10 @@ public class Ground {
 
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function sets an initial value to the playground price.
 	 * @param price
@@ -192,6 +264,10 @@ public class Ground {
 	public void setPrice(int price) {
 	this.price = price;
 	}
+	
+	
+	
+	
 	
 	
 	
@@ -224,6 +300,10 @@ public class Ground {
 	
 	
 	
+	
+	
+	
+	
 	/**
 	 * This constructor sets initial values to 
 	 * the playground name, location, are and price.
@@ -235,6 +315,10 @@ public class Ground {
 		this.price = 0;
 	}
 		
+	
+	
+	
+	
 	
 	
 	/**
@@ -256,6 +340,11 @@ public class Ground {
 	
 	
 	
+	
+	
+	
+	
+	
 	/**
 	 * This function displays the available hours for booking for the playground.
 	 */
@@ -268,6 +357,10 @@ public class Ground {
 		}
 		System.out.println();
 	}
+	
+	
+	
+	
 	
 	
 	
@@ -301,6 +394,10 @@ public class Ground {
 
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function displays the booking hours for the playground.
 	 */
@@ -317,9 +414,13 @@ public class Ground {
 				System.out.println();
 			}
 		}
-		
+		System.out.println("\n\n");
 	}
 
+	
+	
+	
+	
 	
 	
 	/**

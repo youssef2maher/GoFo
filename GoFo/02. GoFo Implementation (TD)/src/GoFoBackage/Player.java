@@ -15,6 +15,10 @@ public class Player extends User {
 	
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function returns the team name.
 	 * @return
@@ -22,6 +26,10 @@ public class Player extends User {
 	public String getTeamName(){
 	return teamName;
 	}
+	
+	
+	
+	
 	
 	
 	
@@ -35,6 +43,10 @@ public class Player extends User {
 	
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function returns the players number in the team.
 	 * @return
@@ -42,6 +54,10 @@ public class Player extends User {
 	public int getPlayersNumber() {
 	return playersNumber;
 	}
+	
+	
+	
+	
 	
 	
 	
@@ -55,6 +71,11 @@ public class Player extends User {
 	
 	
 	
+	
+	
+	
+	
+	
 	/**
 	 * This function displays all the approved playgrounds to the player.
 	 * @param users
@@ -63,10 +84,15 @@ public class Player extends User {
 		
 		for(int i=0;i< users.owner.size(); i++)
 		{
-			System.out.println(users.owner.get(i).getID());
-			users.owner.get(i).viewPlaygrounds();
+			System.out.println("Owner ID [" + users.owner.get(i).getID() + "]");
+			users.owner.get(i).viewActivePlaygrounds();
 		}
 	}
+	
+	
+	
+	
+	
 	
 	
 	
@@ -93,6 +119,11 @@ public class Player extends User {
 			}
 		}		
 	}
+	
+	
+	
+	
+	
 	
 	
 	
@@ -147,6 +178,15 @@ public class Player extends User {
 			}
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * this function to print booking ground at player 
 	 * @param user
@@ -159,15 +199,26 @@ public class Player extends User {
 			{
 				for(int k=0;k<24;k++)
 				{
-					if(user.owner.get(i).ground.get(j).getBookerID(k)== getID())
+					if(user.owner.get(i).ground.get(j).getBookerID(k) == getID()) {
 						System.out.println(user.owner.get(i).ground.get(j));
+						break;
+					}
 				}
 			}
 		}
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
-	 * 
+	 * This function cancel a playground booking
 	 * @param user
 	 * @param ID
 	 */
@@ -189,7 +240,7 @@ public class Player extends User {
 							}
 							else
 							{
-								user.owner.get(i).ground.get(j).setAvailableHour(k, i+1, i+2);
+								user.owner.get(i).ground.get(j).setAvailableHour(k, k+1, k+2);
 							}
 							ewallet.deposit(user.owner.get(i).ground.get(j).getPrice());
 							user.owner.get(i).ewallet.withdraw(user.owner.get(i).ground.get(j).getPrice());
@@ -201,6 +252,12 @@ public class Player extends User {
 		}
 		
 	}
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -223,6 +280,11 @@ public class Player extends User {
 	}
 	
 	
+	
+	
+	
+	
+	
 
 	/**
 	 * 
@@ -232,6 +294,12 @@ public class Player extends User {
 		
 	}
 
+	
+	
+	
+	
+	
+	
 
 	
 	/**
@@ -243,6 +311,11 @@ public class Player extends User {
 	}
 
 
+	
+	
+	
+	
+	
 	
 	/**
 	 * 

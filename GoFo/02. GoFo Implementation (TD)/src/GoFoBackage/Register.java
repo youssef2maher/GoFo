@@ -70,6 +70,10 @@ public class Register {
 	
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function allows the user to login with his user name and password of 
 	 * his account that already have been created. 
@@ -86,7 +90,7 @@ public class Register {
 			if (type.equalsIgnoreCase("owner")) {
 				for (int i = 0; i < owner.size(); i++) {
 					if (owner.get(i).getMail().equalsIgnoreCase(mail)&&owner.get(i).getPassword().equalsIgnoreCase(password)) {
-						return owner.get(i).getID();
+						return i;
 					}
 				}
 			}
@@ -94,7 +98,7 @@ public class Register {
 			else {
 				for (int i = 0; i < player.size(); i++) {
 					if (player.get(i).getMail().equalsIgnoreCase(mail)&&player.get(i).getPassword().equalsIgnoreCase(password)) {
-						return player.get(i).getID();
+						return i;
 					}
 				}
 			}

@@ -30,6 +30,10 @@ public class GroundOwner extends User {
 	
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function allows the owner to make any update or change to their playgrounds, 
 	 * changes could be for playground name, location, area and hours
@@ -61,6 +65,9 @@ public class GroundOwner extends User {
 	
 	
 	
+	
+	
+	
 	/**
 	 * This function display the playgrounds, belongs to this owner, info.
 	 * it also displays their available hours
@@ -69,10 +76,13 @@ public class GroundOwner extends User {
 	{
 		for(int i=0; i<ground.size(); i++)
 		{
-			System.out.println("[ground=" + ground.get(i) + "]");
+			System.out.println("[Ground [" + i + "]" + ground.get(i) + "]");
 			ground.get(i).displayAvailableHour(); 
 		}
 	}
+	
+	
+	
 	
 	
 	
@@ -88,6 +98,37 @@ public class GroundOwner extends User {
 			ground.get(i).viewBooking();
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * This function displays the active playgrounds
+	 */
+	public void viewActivePlaygrounds()
+	{
+		for(int i=0; i<ground.size(); i++)
+		{
+			if (ground.get(i).getState().equalsIgnoreCase("active"))
+			{
+				System.out.println("[ground=" + ground.get(i) + "]");
+				ground.get(i).displayAvailableHour(); 
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * this function to check if playground not booked
 	 * @param first
@@ -123,6 +164,14 @@ public class GroundOwner extends User {
 		return flag;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * This function allows the owner to book his own playgrounds and that's after
 	 * the player book it first. 
@@ -154,6 +203,11 @@ public class GroundOwner extends User {
 	
 	
 	
+	
+	
+	
+	
+	
 	/**
 	 * This function displays the playgrounds of the owner in order of
 	 * its parameter location value.
@@ -168,6 +222,11 @@ public class GroundOwner extends User {
 			}
 		}
 	}
+	
+	
+	
+	
+	
 	
 	
 	
@@ -188,6 +247,11 @@ public class GroundOwner extends User {
 	
 	
 	
+	
+	
+	
+	
+	
 	/**
 	 * 
 	 */
@@ -196,6 +260,10 @@ public class GroundOwner extends User {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	
+	
+	
 
 	
 	/**
@@ -213,6 +281,10 @@ public class GroundOwner extends User {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	
+	
+	
 
 	
 	/**

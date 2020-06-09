@@ -25,14 +25,21 @@ public class UI {
 		
 		//These are two initial accounts
 		regist.signUp("Diab", "Diab@gmail.com", "235711", "Hdayk El-Maady", "0123456789", "owner");
+		regist.owner.get(0).addPlayground("A", "Maady", 100, 10);
+		regist.owner.get(0).addPlayground("B", "Salam", 200, 20);
+		regist.owner.get(0).addPlayground("C", "Giza", 300, 30);
+		
 		regist.signUp("Youssef", "Youssef@gmail.com", "131719", "Dar El-Salam", "01113453457", "player");
+		regist.signUp("Ahmed", "Ahmed@gmail.com", "131719", "Dar El-Salam", "01113453457", "player");
+		regist.signUp("Mohamed", "Mohamed@gmail.com", "131719", "Dar El-Salam", "01113453457", "player");
+		regist.signUp("Ali", "Ali@gmail.com", "131719", "Dar El-Salam", "01113453457", "player");
 		////////////////////////////////
 		
 		
 		while (true) {
 			
 			//To choose between login or sign up
-			System.out.print(" 1. Sign up \n 2. Login \n 3. Admin \n -> ");
+			System.out.print("\n\n 1. Sign up \n 2. Login \n 3. Admin \n -> ");
 			int var1 = scan.nextInt();
 			
 			boolean registerState; //This variable to store the register state if true or false
@@ -42,42 +49,42 @@ public class UI {
 			 */
 			if (var1 == 1) {
 				
-				System.out.println(" -- Register a New Account -- ");
+				System.out.println("\n\n -- Register a New Account -- \n");
 				
-				System.out.print("\t Enter User Name: ");
+				System.out.print("\n\t Enter User Name: ");
 				String userNameVar = scan.next();
 				
-				System.out.print("\t Enter Mail: ");
+				System.out.print("\n\t Enter Mail: ");
 				String mailVar = scan.next();
 				
-				System.out.print("\t Enter Password: ");
+				System.out.print("\n\t Enter Password: ");
 				String passwordVar = scan.next();
 				
-				System.out.print("\t Enter Address: ");
+				System.out.print("\n\t Enter Address: ");
 				String addressVar = scan.next();
 				
-				System.out.print("\t Enter Mobile Number: ");
+				System.out.print("\n\t Enter Mobile Number: ");
 				String mobileVar = scan.next();
 				
-				System.out.print("\t Enter Type (Player or Owner): ");
+				System.out.print("\n\t Enter Type (Player or Owner): ");
 				String typeVar = scan.next();
 				
 				registerState = regist.signUp(userNameVar, mailVar, passwordVar, addressVar, mobileVar, typeVar);
 				
 				//To see check if the account has been signed up or not
 				if (registerState) {
-					System.out.println(" ** The account has been signed up ** ");
+					System.out.println("\n\n\t\t ** The account has been signed up ** ");
 				}else {
 					while(!registerState) {
 						
-						System.out.println(" ** The User Name is already existed ** ");
+						System.out.println("\n\n\t\t ** The User Name is already existed ** ");
 						
-						System.out.print("\t Enter User Name: ");
+						System.out.print("\n\t Enter User Name: ");
 						userNameVar = scan.next();
 						
 						registerState = regist.signUp(userNameVar, mailVar, passwordVar, addressVar, mobileVar, typeVar);
 					}
-					System.out.println(" ** The account has been signed up ** ");
+					System.out.println("\n\n\t\t ** The account has been signed up ** ");
 				}
 			}
 			
@@ -89,25 +96,31 @@ public class UI {
 			
 			String typeVar = " ";	int loginAccID = 0;
 			if (var1 != 3) {
-				System.out.println(" -- Login with an Existed Account -- ");
+				System.out.println("\n\n -- Login with an Existed Account -- \n");
 				
 				//To check if the user is owner or player
-				System.out.print(" Enter Accounr Type (Owner or Player): ");
+				System.out.print("\n Enter Account Type (Owner or Player): ");
 				typeVar = scan.next();
 				
-				System.out.print("\t Enter User mail: ");
+				System.out.print("\n\t Enter User mail: ");
 				String userNameVar = scan.next();
 				
-				System.out.print("\t Enter Password: ");
+				System.out.print("\n\t Enter Password: ");
 				String passwordVar = scan.next();
 				
 				loginAccID = regist.login(userNameVar, passwordVar, typeVar);
 				while(loginAccID == -1) {
-					System.out.println(" ** Your User Name or Password isn't Correct ** ");
+					System.out.println("\n\n\t\t ** Your User Name or Password isn't Correct ** \n");
+					
+					System.out.print("\n\t Enter User mail: ");
+					userNameVar = scan.next();
+					
+					System.out.print("\n\t Enter Password: ");
+					passwordVar = scan.next();
 					loginAccID = regist.login(userNameVar, passwordVar, typeVar);
 				}
 				
-				System.out.println(" ** You'er In ** ");
+				System.out.println("\n\n\t\t ** You'er In ** ");
 			}
 			
 			
@@ -129,11 +142,11 @@ public class UI {
 				while (true) {
 					
 					//Displaying the menu for the owner and make him choose an option
-					System.out.println("\t\t\t Welcome " + ownerObj.getUserName());
+					System.out.println("\n\n\t\t\t Welcome " + ownerObj.getUserName() + "\n");
 					System.out.print(" [1] Add Playground \n"
 									 + " [2] Update Playground \n"
 									 + " [3] See Booking Requests \n"
-									 + " [4] eWallet \n "
+									 + " [4] eWallet \n"
 									 + " [5] Log out \n ->");
 					int option = scan.nextInt();
 					
@@ -144,7 +157,7 @@ public class UI {
 					 */
 					if (option == 1) {
 						
-						System.out.println(" -- Add Playground --");
+						System.out.println("\n\n -- Add Playground -- \n");
 						
 						System.out.print("\t Enter Playground Name: ");
 						String playgroundNameVar = scan.next();
@@ -170,20 +183,21 @@ public class UI {
 					 */
 					else if (option == 2) {
 						
-						System.out.println(" -- Update Playground -- ");
+						System.out.println("\n\n -- Update Playground -- \n");
 						
 						//Displaying all the owner playgrounds
 						ownerObj.viewPlaygrounds();
 						
-						System.out.print("\t Enter Playground number: ");
+						System.out.print("\n\n\t Enter Playground number: \n");
 						int playgroundIDVar = scan.nextInt();
 						
 						while(true) {
 							
-							System.out.print(" (1) Change Playground Name \n "
-												+ " (2) Change Location \n "
-												+ " (3) Change Area \n "
-												+ " (4) Change Booking Hours \n ");
+							System.out.print(" (1) Change Playground Name \n"
+												+ " (2) Change Location \n"
+												+ " (3) Change Area \n"
+												+ " (4) Change Booking Hours \n"
+												+ " (5) Go Back \n -> ");
 							int change = scan.nextInt();
 							
 							String playgroundNameVar = ownerObj.ground.get(playgroundIDVar).getGroundName();
@@ -212,6 +226,9 @@ public class UI {
 								endHourVar = scan.nextInt();
 								ownerObj.updatePlayground(playgroundIDVar, playgroundNameVar, playgroundLocationVar, playgroundAreaVar, startHourVar, endHourVar,change);
 							}
+							else if (change == 5) {
+								break;
+							}
 						}
 					}
 					
@@ -223,7 +240,7 @@ public class UI {
 					 */
 					else if (option == 3) {
 						
-						System.out.println(" -- Booking Requests -- ");
+						System.out.println("\n\n -- Booking Requests -- \n");
 						
 						ownerObj.viewBooking();
 					}
@@ -236,13 +253,13 @@ public class UI {
 					 */
 					else if (option == 4) {
 						
-						System.out.println(" -- eWallet -- ");
+						System.out.println("\n\n -- eWallet -- \n");
 						
 						while (true) {
 							
-							System.out.print(" (1) Deposite \n "
-											+ " (2) Withdraw \n "
-											+ " (3) Balance \n "
+							System.out.print("\n\n (1) Deposite \n"
+											+ " (2) Withdraw \n"
+											+ " (3) Balance \n"
 											+ " (4) Done! \n -> ");
 							int operation = scan.nextInt();
 							
@@ -258,11 +275,14 @@ public class UI {
 								System.out.print(" Enter the Withdrawn Value: ");
 								int withdrawValueVar = scan.nextInt();
 								
-								ownerObj.ewallet.deposit(withdrawValueVar);
+								ownerObj.ewallet.withdraw(withdrawValueVar);
 							}
 							else if (operation == 3) {
 								
 								System.out.print(" Your Balance: " + ownerObj.ewallet.getBalance());
+							}
+							else if (operation == 4) {
+								break;
 							}
 						}
 					}	
@@ -297,14 +317,13 @@ public class UI {
 				while (true) {
 					
 					//Displaying the Main Menu to the Player and choose operation to do
-					System.out.println("\t\t\t Welcome " + playerObj.getUserName());
-					System.out.print(" [1] View Playgrounds \n "
+					System.out.println("\n\n\t\t\t Welcome " + playerObj.getUserName());
+					System.out.print("  [1] View Playgrounds \n "
 										+ " [2] Book a Playground \n "
 										+ " [3] Cancel a Booking \n "
 										+ " [4] Add Player to your Team \n "
-										+ " [5] Update Team Name"
-										+ " [6] View Team \n "
-										+ " [7] Log out \n -> ");
+										+ " [5] View Team \n "
+										+ " [6] Log out \n -> ");
 					int option = scan.nextInt();
 					
 					
@@ -314,7 +333,7 @@ public class UI {
 					 */
 					if (option == 1) {
 						
-						System.out.println(" -- View Playgrounds -- ");
+						System.out.println("\n\n -- View Playgrounds -- \n");
 						
 						playerObj.viewPlayground(regist);
 					}
@@ -327,12 +346,12 @@ public class UI {
 					 */
 					else if (option == 2) {
 						
-						System.out.println(" -- Book a Playground -- ");
+						System.out.println("\n\n -- Book a Playground -- \n");
 						playerObj.viewPlayground(regist);
 						System.out.print(" Enter Owner ID: ");
 						int ownerIDVar = scan.nextInt();
 						
-						System.out.print(" Enter Playground ID: ");
+						System.out.print(" Enter Playground Number: ");
 						int playgourndIDVar = scan.nextInt();
 						
 						System.out.print(" Enter the Starting Hour: ");
@@ -344,13 +363,13 @@ public class UI {
 						int bookingState = playerObj.bookPlayground(regist, ownerIDVar, firstVar, lastVar, playgourndIDVar);
 						
 						if (bookingState == -2) {
-							System.out.println(" ** The Owner ID not Found ** ");
+							System.out.println("\n\n ** The Owner ID not Found ** ");
 						}
 						else if (bookingState == -1) {
-							System.out.println(" ** Your Current Balance does't allow the booking ** ");
+							System.out.println("\n\n ** Your Current Balance does't allow the booking ** ");
 						}
 						else {
-							System.out.println(" ** Done!! ** ");
+							System.out.println("\n\n ** Done!! ** ");
 						}	
 					}
 					
@@ -363,10 +382,10 @@ public class UI {
 					 */
 					else if (option == 3) {
 						
-						System.out.println(" -- Cancel a Booking -- ");
+						System.out.println("\n\n -- Cancel a Booking -- \n");
 						playerObj.printbooking(regist);
 						int ID;
-						System.out.println("enter ID of ground you want ");
+						System.out.println("Enter ID of Ground You Want");
 						ID = scan.nextInt();
 						playerObj.cancelPlayground(regist, ID);
 					}
@@ -380,37 +399,22 @@ public class UI {
 					 */
 					else if (option == 4) {
 						
-						System.out.println(" -- Add a Player to you Team -- ");
+						System.out.println("\n\n -- Add a Player to you Team -- \n");
 						
 						System.out.println(" Enter the Team Mate Name: ");
 						String teamMateNameVar = scan.next();
 						
 						boolean addPlayerState = playerObj.addPlayer(teamMateNameVar, regist);
 						if (addPlayerState) {
-							System.out.println(" ** Done!! ** ");
+							System.out.println("\n\n ** Done!! ** ");
 						}
 						else {
-							System.out.println(" ** The Player not Found ** ");
+							System.out.println("\n\n ** The Player not Found ** ");
 						}
 					}
 					
 					
 					
-					
-					
-					/*
-					 * Update Team Name Option
-					 */
-					else if (option == 5) {
-						
-						System.out.println(" -- Update Team Name -- ");
-						
-						System.out.print(" Enter the New Team Name: ");
-						String newTeamNameVar = scan.next();
-						
-						playerObj.setTeamName(newTeamNameVar);
-						System.out.println(" ** Done!! ** ");
-					}
 					
 					
 					
@@ -418,15 +422,13 @@ public class UI {
 					/*
 					 * View Team Option
 					 */
-					else if (option == 6) {
+					else if (option == 5) {
 						
-						System.out.println(" -- View Team -- ");
-										
-						System.out.println(playerObj.getTeamName() + " Team");
-						
+						System.out.println("\n\n -- View Team -- \n");
+						int playerNumberInTeam = 0;
 						System.out.println(" Team Members: ");
 						for (int i = 0; i < playerObj.getPlayersNumber(); i++) {
-							System.out.println(" [" + i+1 + "] " + playerObj.teamPlayers[i]);
+							System.out.println(" [" + playerNumberInTeam++ + "] " + playerObj.teamPlayers[i]);
 						}
 					}
 					
@@ -436,7 +438,7 @@ public class UI {
 					/*
 					 * Log out Option
 					 */
-					else if (option == 7) {
+					else if (option == 6) {
 						break;
 					}
 				}	
@@ -456,7 +458,7 @@ public class UI {
 				
 				Admin adminObj = regist.admin;
 				
-				System.out.print(" Enter Admin Name: ");
+				System.out.print("\n\n Enter Admin Name: ");
 				String adminNameVar = scan.next();
 				
 				System.out.print(" Enter Password: ");
@@ -465,7 +467,7 @@ public class UI {
 				boolean loginState = adminObj.login(adminNameVar, adminPasswordVar);
 				
 				if (!loginState) {
-					System.out.println(" ** Wrong Name or Password ** ");
+					System.out.println("\n\n ** Wrong Name or Password ** ");
 				}
 				
 				while (loginState) {
@@ -488,7 +490,7 @@ public class UI {
 					 */
 					if (option == 1) {
 						
-						System.out.println(" -- View Activated Playgrounds -- ");
+						System.out.println("\n\n -- View Activated Playgrounds -- \n");
 						
 						adminObj.activatedGrounds(regist);
 					}
@@ -500,7 +502,7 @@ public class UI {
 					 * View Non-activated Playgrounds Option
 					 */
 					else if (option == 2) {
-						System.out.println(" -- View Non-activated Playgrounds -- ");
+						System.out.println("\n\n -- View Non-activated Playgrounds -- \n");
 						
 						adminObj.nonActivatedGrounds(regist);
 					}
@@ -512,7 +514,7 @@ public class UI {
 					 * View Suspended Playgrounds Option
 					 */
 					else if (option == 3) {
-						System.out.println(" -- View Suspended Playgrounds -- ");
+						System.out.println("\n\n -- View Suspended Playgrounds -- \n");
 						
 						adminObj.suspendedGrounds(regist);
 					}
@@ -524,13 +526,13 @@ public class UI {
 					 * Delete Playgrounds Option
 					 */
 					else if (option == 4) {
-						System.out.println(" -- Delete Playground -- ");
+						System.out.println("\n\n -- Delete Playground -- \n");
 						
 						System.out.print(" Enter the Playground ID: ");
 						int deletedPlaygroundIDVar = scan.nextInt();
 						
 						adminObj.deleteGround(regist, deletedPlaygroundIDVar);
-						System.out.println(" ** Done ** ");
+						System.out.println("\n\n ** Done ** ");
 					}								
 
 					
@@ -540,13 +542,13 @@ public class UI {
 					 * Activate Playgrounds Option
 					 */
 					else if (option == 5) {
-						System.out.println(" -- Activate Playground -- ");
+						System.out.println("\n\n -- Activate Playground -- \n");
 						
 						System.out.print(" Enter the Playground ID: ");
 						int activatedPlaygroundIDVar = scan.nextInt();
 						
 						adminObj.activateGround(regist, activatedPlaygroundIDVar);
-						System.out.println(" ** Done ** ");
+						System.out.println("\n\n ** Done ** ");
 					}
 					
 
@@ -557,13 +559,13 @@ public class UI {
 					 * Suspend Playgrounds Option
 					 */
 					else if (option == 6) {
-						System.out.println(" -- Suspend Playground -- ");
+						System.out.println("\n\n -- Suspend Playground -- \n");
 						
 						System.out.print(" Enter the Playground ID: ");
 						int suspendedPlaygroundIDVar = scan.nextInt();
 						
 						adminObj.suspendGround(regist, suspendedPlaygroundIDVar);
-						System.out.println(" ** Done ** ");
+						System.out.println("\n\n ** Done ** ");
 					}
 					
 					

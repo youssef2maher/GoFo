@@ -10,6 +10,9 @@ public class Ewallet {
 
 	
 	
+	
+	
+	
 	/**
 	 * This function returns the balance value;
 	 * @return
@@ -20,6 +23,11 @@ public class Ewallet {
 
 	
 	
+	
+	
+	
+	
+	
 	/**
 	 * This function sets a value to the balance
 	 * @param balance
@@ -27,6 +35,11 @@ public class Ewallet {
 	public void setBalance(int balance) {
 		this.balance = balance;
 	}
+	
+	
+	
+	
+	
 	
 	
 	
@@ -51,6 +64,10 @@ public class Ewallet {
 	
 	
 	
+	
+	
+	
+	
 	/**
 	 * This function adds cash to the user eWallet.
 	 * @param valueDeposit
@@ -61,6 +78,11 @@ public class Ewallet {
 	
 	
 	
+	
+	
+	
+	
+	
 	/**
 	 * This constructor sets an initial value to the user balance
 	 * in his eWallet.
@@ -68,6 +90,11 @@ public class Ewallet {
 	public Ewallet() {
 		this.balance = 1000;
 	}
+	
+	
+	
+	
+	
 	
 	
 	
